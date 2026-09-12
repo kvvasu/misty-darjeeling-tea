@@ -1,0 +1,53 @@
+{
+  "name": "misty-darjeeling-tea",
+  "version": "0.1.0",
+  "private": true,
+  "packageManager": "pnpm@12.4.1",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "next dev --webpack",
+    "prebuild": "node scripts/compute-csp-hash.mjs",
+    "build": "next build --webpack",
+    "postbuild": "node scripts/assert-export.mjs",
+    "start": "next start",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "palette": "node scripts/derive-palette.mjs && node scripts/generate-theme.mjs && pnpm exec astryx theme build theme/wada-theme.ts"
+  },
+  "dependencies": {
+    "@astryxdesign/core": "0.6.0",
+    "@stylexjs/stylex": "0.19.0",
+    "next": "16.3.5",
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@astryxdesign/build": "0.6.0",
+    "@babel/core": "7.29.7",
+    "@fontsource/caveat": "5.3.0",
+    "@fontsource/space-mono": "5.3.0",
+    "@stylexjs/babel-plugin": "0.19.0",
+    "@astryxdesign/cli": "0.6.0",
+    "@axe-core/playwright": "4.13.0",
+    "@lhci/cli": "0.15.1",
+    "@playwright/test": "1.63.0",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "22.20.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "culori": "4.0.2",
+    "eslint": "10.10.0",
+    "eslint-config-next": "16.3.5",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@astryxdesign/cli",
+      "@astryxdesign/core",
+      "unrs-resolver"
+    ]
+  }
+}

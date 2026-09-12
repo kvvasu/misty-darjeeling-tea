@@ -1,0 +1,9 @@
+node_modules/
+.next/
+out/
+qa/screenshots/
+qa/test-results/
+qa/lighthouse/.lighthouseci/
+*.tsbuildinfo
+next-env.d.ts
+.DS_Store

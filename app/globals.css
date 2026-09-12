@@ -1,0 +1,68 @@
+/* Global stylesheet — layer-assigned imports only (§3.1). No unlayered globals.
+ * Import order per `astryx docs migration` (Tailwind v4 coexistence), with the
+ * project-owned compiled Wada theme in place of any vendor theme package.
+ */
+@import './layers.css';
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/preflight.css' layer(base);
+@import '@astryxdesign/core/reset.css';
+@import '../theme/wada.css';
+@import '@astryxdesign/core/tailwind-theme.css';
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+/* StyleX compilation trigger (§3.1). The @astryxdesign/build PostCSS plugin
+ * compiles StyleX from Astryx library source AND product source at this point,
+ * emitting each into its own layer (astryx-base / product). Omitting this
+ * at-rule silently produces no component CSS — asserted by assert-export.mjs. */
+@stylex;
+
+/* Project styles land in the `project` layer: after astryx-theme, before
+ * utilities. Colour literals are forbidden here — tokens only (§3.1). */
+@layer project {
+  :where(body) {
+    background-color: var(--color-background-body);
+    color: var(--color-text-primary);
+    font-family: var(--font-family-body);
+  }
+
+  /* SC 2.4.11 — anchor targets clear the header when focused */
+  :where([id]) {
+    scroll-margin-top: 5rem;
+  }
+
+  /* Skip link: hidden until focused */
+  :where(.skip-link) {
+    position: absolute;
+    left: -9999px;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-background-surface);
+    color: var(--color-text-primary);
+    padding: var(--spacing-2) var(--spacing-4);
+  }
+  :where(.skip-link:focus) {
+    left: 0;
+  }
+
+  /* Honeypot: visually hidden but NOT display:none (§2.3) — kept out of the
+   * accessibility tree via aria-hidden on the wrapper, tabindex="-1" on input */
+  :where(.honeypot-field) {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+
+  /* MarqueeTicker (§3.6): honour prefers-reduced-motion — no auto-scroll */
+  @media (prefers-reduced-motion: reduce) {
+    :where([data-marquee-track]) {
+      animation: none !important;
+      transform: none !important;
+    }
+  }
+}

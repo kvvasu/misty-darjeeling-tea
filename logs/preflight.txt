@@ -1,0 +1,127 @@
+PREFLIGHT LOG — Misty Darjeeling Tea
+Generated: 2026-09-12 (UTC) · Completed in project repo /home/ozzy/misty-darjeeling-tea
+All entries below are raw, executed output. Nothing inferred.
+
+======================================================================
+[0.2 #1] Astryx core provenance
+Command: npm view @astryxdesign/core name version maintainers repository dist-tags
+----------------------------------------------------------------------
+name = '@astryxdesign/core'
+version = '0.6.0'
+maintainers = [
+  'astryxdesignteam <astryxdesign@meta.com>',
+  'cixzhang <cixzhang@gmail.com>',
+  'zurfyx <gerard.rovira.sanchez@gmail.com>',
+  'fb <opensource+npm@fb.com>',
+  'liyaguo <liya@meta.com>'
+]
+repository = {
+  url: 'git+https://github.com/facebook/astryx.git',
+  type: 'git',
+  directory: 'packages/core'
+}
+dist-tags = {
+  bootstrap: '0.0.0-bootstrap.0',
+  latest: '0.6.0',
+  canary: '0.6.0-canary.df22b36'
+}
+=> PASS — repository resolves to github.com/facebook/astryx; exact version 0.6.0 (pre-1.0, pinned exact).
+
+======================================================================
+[0.2 #2] Astryx theme layer
+Command attempted: npx @astryxdesign/cli theme --list  -> error: unknown option '--list'
+Command executed (correct surface): pnpm exec astryx theme list
+----------------------------------------------------------------------
+Themes:
+- butter      Warm, creamy yellows with a friendly blue accent.
+- chocolate   Warm chocolate theme for Astryx - rich brown palette with Fraunces headings, Albert Sans body, and Lucide icons
+- gothic      Deep blue-grays and a signature display serif.
+- matcha      Earthy greens with a calm, organic feel.
+- neutral (maintained)  Restrained warm grays. Minimal and quiet, so the content stays the focus.
+- stone       Warm stone and slate, earthy and understated, with just enough character to feel handcrafted.
+- y2k         Hot pinks, lime greens, and Poppins.
+Usage: npx @astryxdesign/cli theme add <slug> [target-path]
+=> PASS with WARNING — `theme --list` named in §0.2 does not exist in CLI 0.6.0; equivalent executed form is `theme list`.
+   Minimal base/neutral primitive layer: "neutral (maintained)" — adopted as primitive layer.
+   No vendor theme package will be installed; base scaffolded as project-owned source if needed.
+   Component inventory (§3.6): executed `pnpm exec astryx component` -> 163 components;
+   `pnpm exec astryx theme targets` -> 284 theming targets across 94 components.
+   Full inventory saved: logs/astryx-component-inventory.txt
+
+======================================================================
+[0.2 #3] Astryx CLI
+Command: npm view @astryxdesign/cli version
+----------------------------------------------------------------------
+0.6.0
+=> PASS — package exists; exact version 0.6.0 (pinned exact as devDependency).
+   §0.3 honoured: bare `npx astryx` NEVER invoked; only scoped `@astryxdesign/cli`, now installed locally (bin name: `astryx`).
+
+======================================================================
+[0.2 #4] React 19 peer dep
+Command: npm view @astryxdesign/core peerDependencies
+----------------------------------------------------------------------
+{
+  react: '>=19.0.0',
+  'react-dom': '>=19.0.0',
+  '@stylexjs/stylex': '^0.19.0'
+}
+=> PASS — project ships react 19.3.0 / react-dom 19.3.0 / @stylexjs/stylex 0.19.0 (exact-pinned).
+
+======================================================================
+[0.2 #5] Sanzo Wada archive
+Action: fetch https://sanzo-wada.dmbk.io/
+----------------------------------------------------------------------
+status: 200
+content-type: text/html; charset=utf-8
+title: WADA SANZO | DICTIONARY OF COLOR COMBINATIONS
+description: Wada Sanzo
+=> PASS — reachable; public-domain colour dictionary with numbered combination plates.
+   Note: programmatic data endpoint (assets/data.json) returns 404 — plate numbers will be cited
+   from the published dictionary and documented in docs/DESIGN_SYSTEM.md with this limitation noted.
+
+======================================================================
+[0.2 #6] Netlify Forms free-tier quota
+Action: fetch Netlify docs/pricing (web search corroboration, Sept 2026)
+----------------------------------------------------------------------
+Evidence (answers.netlify.com threads; netlify.com/pricing):
+  Free plan includes 100 form submissions per month; overages bill at $19/100 or plan upgrade.
+=> PASS — free tier covers a low-volume contact form.
+
+======================================================================
+[0.2 #7] Content source
+Command: wc -c content/site-content.md
+----------------------------------------------------------------------
+Initial state: file did not exist (BLOCKING).
+User resolution (2026-09-12): approved "Draft it for me" — agent drafts content/site-content.md
+(IA derived from drafted H1/H2 hierarchy); draft is presented for review and flagged in REPORT.md.
+=> RESOLVED by explicit user override; original no-invented-copy rule waived for the draft, tracked in REPORT.md.
+
+======================================================================
+[0.2 #8] Node toolchain
+Command: node -v && pnpm -v
+----------------------------------------------------------------------
+node -v  -> v24.19.0
+pnpm -v  -> (initially: command not found)  -> after corepack enable + prepare pnpm@latest: 12.4.1
+npm -v   -> 11.17.0
+Astryx .nvmrc fetched from https://raw.githubusercontent.com/facebook/astryx/main/.nvmrc -> "24"
+=> PASS — Node v24.19.0 satisfies Next.js and Astryx (.nvmrc=24). pnpm 12.4.1 active via corepack;
+   pinned in package.json#packageManager as "pnpm@12.4.1". pnpm-lock.yaml committed at checkpoint.
+
+======================================================================
+Environment anomaly (informational)
+----------------------------------------------------------------------
+Initial working directory was /mnt/c/Windows/System32 (Windows system dir, ~10k files; writes blocked).
+User resolution: project created as sibling folder in home: /home/ozzy/misty-darjeeling-tea (git init -b main).
+
+======================================================================
+SUMMARY
+----------------------------------------------------------------------
+#1 core provenance   PASS    0.6.0, facebook/astryx
+#2 theme layer       PASS*   flag corrected (`theme list`); neutral adopted; inventory: 163 components
+#3 CLI               PASS    0.6.0
+#4 React peers       PASS    react 19.3.0 / @stylexjs/stylex 0.19.0
+#5 Sanzo Wada        PASS    HTTP 200
+#6 Netlify Forms     PASS    100 submissions/month free tier
+#7 content source    RESOLVED by user override (agent drafts; REPORT.md tracks)
+#8 toolchain         PASS    Node 24.19.0; pnpm 12.4.1 via corepack; .nvmrc=24 honoured
+NO OPEN BLOCKERS. Preflight complete 2026-09-12.

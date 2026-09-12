@@ -1,0 +1,243 @@
+{
+  "meta": {
+    "generated": "2026-09-12T18:50:19.016Z",
+    "oklchOnly": "hue preserved from Wada sources; L/C adjusted for WCAG 2.2 AA",
+    "plates": {
+      "#102": [
+        "Ivory Buff",
+        "Orange Rufous"
+      ],
+      "#137": [
+        "Etruscan Red",
+        "Cinnamon Buff",
+        "Pistachio Green"
+      ],
+      "#139": [
+        "Salvia Blue",
+        "Deep Indigo",
+        "Neutral Gray"
+      ]
+    },
+    "wadaSources": [
+      "https://sanzo-wada.dmbk.io/",
+      "https://wscolors.com/colors (digitised 159-colour table)",
+      "https://colors.elwyn.co/ (combination index)"
+    ]
+  },
+  "light": {
+    "color-surface-page": "oklch(0.9735 0.0139 89)",
+    "color-surface-raised": "oklch(1 0 0)",
+    "color-surface-sunken": "oklch(0.944 0.0238 88)",
+    "color-text-primary": "oklch(0.1919 0.0631 263)",
+    "color-text-secondary": "oklch(0.3786 0.0247 225)",
+    "color-text-on-action": "oklch(0.9939 0.0082 91)",
+    "color-border-subtle": "oklch(0.8867 0.0351 89)",
+    "color-action-primary": "oklch(0.5706 0.1346 54)",
+    "color-action-primary-hover": "oklch(0.5226 0.1346 54)",
+    "color-accent": "oklch(0.587 0.1485 28)",
+    "color-accent-soft": "oklch(0.9308 0.0227 31)",
+    "color-focus-ring": "oklch(0.478 0.1082 56)",
+    "color-status-success": "oklch(0.4769 0.0881 154)",
+    "color-status-warning": "oklch(0.5188 0.1016 75)",
+    "color-status-error": "oklch(0.563 0.1485 28)",
+    "color-status-info": "oklch(0.4808 0.0876 259)",
+    "color-ink-deep": "oklch(0.1919 0.0631 263)"
+  },
+  "dark": {
+    "color-surface-page": "oklch(0.1933 0.0092 75)",
+    "color-surface-raised": "oklch(0.2375 0.0127 78)",
+    "color-surface-sunken": "oklch(0.165 0.007 78)",
+    "color-text-primary": "oklch(0.9203 0.0255 87)",
+    "color-text-secondary": "oklch(0.7982 0.0104 213)",
+    "color-text-on-action": "oklch(0.1919 0.0631 263)",
+    "color-border-subtle": "oklch(0.3256 0.0183 74)",
+    "color-action-primary": "oklch(0.7134 0.1311 56)",
+    "color-action-primary-hover": "oklch(0.7134 0.1311 56)",
+    "color-accent": "oklch(0.7134 0.1163 28)",
+    "color-accent-soft": "oklch(0.2918 0.0315 32)",
+    "color-focus-ring": "oklch(0.7903 0.1061 54)",
+    "color-status-success": "oklch(0.7319 0.0807 157)",
+    "color-status-warning": "oklch(0.7831 0.1146 86)",
+    "color-status-error": "oklch(0.7286 0.1179 27)",
+    "color-status-info": "oklch(0.7752 0.0609 256)",
+    "color-ink-deep": "oklch(0.1876 0.0422 268)"
+  },
+  "contrast": [
+    {
+      "mode": "light",
+      "fg": "color-text-primary",
+      "bg": "surface-page",
+      "ratio": 17.13,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "light",
+      "fg": "color-text-primary",
+      "bg": "surface-raised",
+      "ratio": 18.49,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "light",
+      "fg": "color-text-secondary",
+      "bg": "surface-page",
+      "ratio": 9.26,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "light",
+      "fg": "color-text-secondary",
+      "bg": "surface-raised",
+      "ratio": 9.99,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "light",
+      "fg": "color-text-on-action",
+      "bg": "action-primary",
+      "ratio": 4.59,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "light",
+      "fg": "color-focus-ring",
+      "bg": "surface-page",
+      "ratio": 6.34,
+      "need": 3,
+      "pass": true
+    },
+    {
+      "mode": "light",
+      "fg": "color-focus-ring",
+      "bg": "surface-raised",
+      "ratio": 6.84,
+      "need": 3,
+      "pass": true
+    },
+    {
+      "mode": "light",
+      "fg": "color-status-success",
+      "bg": "surface-page",
+      "ratio": 5.89,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "light",
+      "fg": "color-status-warning",
+      "bg": "surface-page",
+      "ratio": 5.22,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "light",
+      "fg": "color-status-error",
+      "bg": "surface-page",
+      "ratio": 4.58,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "light",
+      "fg": "color-status-info",
+      "bg": "surface-page",
+      "ratio": 6.06,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "dark",
+      "fg": "color-text-primary",
+      "bg": "surface-page",
+      "ratio": 14.51,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "dark",
+      "fg": "color-text-primary",
+      "bg": "surface-raised",
+      "ratio": 13.1,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "dark",
+      "fg": "color-text-secondary",
+      "bg": "surface-page",
+      "ratio": 9.8,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "dark",
+      "fg": "color-text-secondary",
+      "bg": "surface-raised",
+      "ratio": 8.85,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "dark",
+      "fg": "color-text-on-action",
+      "bg": "action-primary",
+      "ratio": 7.01,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "dark",
+      "fg": "color-focus-ring",
+      "bg": "surface-page",
+      "ratio": 9.25,
+      "need": 3,
+      "pass": true
+    },
+    {
+      "mode": "dark",
+      "fg": "color-focus-ring",
+      "bg": "surface-raised",
+      "ratio": 8.35,
+      "need": 3,
+      "pass": true
+    },
+    {
+      "mode": "dark",
+      "fg": "color-status-success",
+      "bg": "surface-page",
+      "ratio": 8,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "dark",
+      "fg": "color-status-warning",
+      "bg": "surface-page",
+      "ratio": 9.22,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "dark",
+      "fg": "color-status-error",
+      "bg": "surface-page",
+      "ratio": 7.27,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "dark",
+      "fg": "color-status-info",
+      "bg": "surface-page",
+      "ratio": 9.03,
+      "need": 4.5,
+      "pass": true
+    }
+  ]
+}

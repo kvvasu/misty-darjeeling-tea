@@ -1,0 +1,10 @@
+packages:
+  - '.'
+allowBuilds:
+  '@astryxdesign/cli': set this to true or false
+  '@astryxdesign/core': set this to true or false
+  unrs-resolver: set this to true or false
+onlyBuiltDependencies:
+  - '@astryxdesign/cli'
+  - '@astryxdesign/core'
+  - 'unrs-resolver'

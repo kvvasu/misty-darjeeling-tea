@@ -1,0 +1,4 @@
+/* Cascade layer order — declared ONCE, before any @import (§3.1).
+ * This file must stay separate: webpack hoists @import content above inline CSS.
+ * Anything unlayered would beat every layer below — no unlayered globals allowed. */
+@layer reset, theme, base, astryx-base, astryx-theme, project, utilities;
