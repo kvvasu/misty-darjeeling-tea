@@ -1582,3 +1582,119 @@ error surfaced: true
 --- /contact/ empty-submit flow ---
 live region: true (polite: true)
 error surfaced: true
+
+=== Keyboard traversal run — 2026-09-12T23:24:17.889Z ===
+
+--- /misty-darjeeling-tea/ ---
+1. a "Skip to content"  ← skip link ✓
+   Enter on skip link → focus target: #main ✓
+2. a "Explore our teas"  focus: visible ✓
+3. a "Visit the estate"  focus: visible ✓
+4. a "Contact"  focus: visible ✓
+   Full tab order (fresh load):
+   1. a "Skip to content"
+   2. a "Misty Darjeeling Tea"
+   3. a "Our Teas"
+   4. a "Our Estate"
+   5. a "Brew Guide"
+   6. a "Contact"
+   7. button "Switch to dark mode"
+   8. a "Explore our teas"
+   9. a "Visit the estate"
+   10. a "Contact"
+
+--- /misty-darjeeling-tea/teas/ ---
+1. a "Skip to content"  ← skip link ✓
+   Enter on skip link → focus target: #main ✓
+2. a "Ask us for a recommendation"  focus: visible ✓
+3. a "Contact"  focus: visible ✓
+   Full tab order (fresh load):
+   1. a "Skip to content"
+   2. a "Misty Darjeeling Tea"
+   3. a "Our Teas"
+   4. a "Our Estate"
+   5. a "Brew Guide"
+   6. a "Contact"
+   7. button "Switch to dark mode"
+   8. a "Ask us for a recommendation"
+   9. a "Contact"
+
+--- /misty-darjeeling-tea/estate/ ---
+1. a "Skip to content"  ← skip link ✓
+   Enter on skip link → focus target: #main ✓
+2. a "Taste the difference"  focus: visible ✓
+3. a "Plan a visit"  focus: visible ✓
+4. a "Contact"  focus: visible ✓
+   Full tab order (fresh load):
+   1. a "Skip to content"
+   2. a "Misty Darjeeling Tea"
+   3. a "Our Teas"
+   4. a "Our Estate"
+   5. a "Brew Guide"
+   6. a "Contact"
+   7. button "Switch to dark mode"
+   8. a "Taste the difference"
+   9. a "Plan a visit"
+   10. a "Contact"
+
+--- /misty-darjeeling-tea/brew-guide/ ---
+1. a "Skip to content"  ← skip link ✓
+   Enter on skip link → focus target: #main ✓
+2. a "Find your flush"  focus: visible ✓
+3. a "Contact"  focus: visible ✓
+   Full tab order (fresh load):
+   1. a "Skip to content"
+   2. a "Misty Darjeeling Tea"
+   3. a "Our Teas"
+   4. a "Our Estate"
+   5. a "Brew Guide"
+   6. a "Contact"
+   7. button "Switch to dark mode"
+   8. a "Find your flush"
+   9. a "Contact"
+
+--- /misty-darjeeling-tea/contact/ ---
+1. a "Skip to content"  ← skip link ✓
+   Enter on skip link → focus target: #main ✓
+2. input #_R_7plfivdb_  focus: visible ✓
+3. input #_R_9plfivdb_  focus: visible ✓
+4. button #_R_bplfivdb_ [role=combobox] "General question"  focus: visible ✓
+5. textarea #_R_cplfivdb_  focus: visible ✓
+6. button "Send message"  focus: visible ✓
+7. a "Contact"  focus: visible ✓
+   Full tab order (fresh load):
+   1. a "Skip to content"
+   2. a "Misty Darjeeling Tea"
+   3. a "Our Teas"
+   4. a "Our Estate"
+   5. a "Brew Guide"
+   6. a "Contact"
+   7. button "Switch to dark mode"
+   8. input #_R_7plfivdb_
+   9. input #_R_9plfivdb_
+   10. button #_R_bplfivdb_ [role=combobox] "General question"
+   11. textarea #_R_cplfivdb_
+   12. button "Send message"
+   13. a "Contact"
+
+--- /misty-darjeeling-tea/thank-you/ ---
+1. a "Skip to content"  ← skip link ✓
+   Enter on skip link → focus target: #main ✓
+2. a "Back to home"  focus: visible ✓
+3. a "Contact"  focus: visible ✓
+   Full tab order (fresh load):
+   1. a "Skip to content"
+   2. a "Misty Darjeeling Tea"
+   3. a "Our Teas"
+   4. a "Our Estate"
+   5. a "Brew Guide"
+   6. a "Contact"
+   7. button "Switch to dark mode"
+   8. a "Back to home"
+   9. a "Contact"
+
+=== traversal failures: 0 ===
+
+--- /contact/ empty-submit flow ---
+live region: true (polite: true)
+error surfaced: true

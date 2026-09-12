@@ -1,10 +1,8 @@
 packages:
   - '.'
+# pnpm 11+: build-script approval lives in allowBuilds (package -> true/false).
+# onlyBuiltDependencies was removed in pnpm 11.
 allowBuilds:
-  '@astryxdesign/cli': set this to true or false
-  '@astryxdesign/core': set this to true or false
-  unrs-resolver: set this to true or false
-onlyBuiltDependencies:
-  - '@astryxdesign/cli'
-  - '@astryxdesign/core'
-  - 'unrs-resolver'
+  '@astryxdesign/cli': true
+  '@astryxdesign/core': true
+  unrs-resolver: true

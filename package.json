@@ -48,12 +48,5 @@
     "eslint-config-next": "16.3.5",
     "tailwindcss": "4.3.3",
     "typescript": "5.9.3"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@astryxdesign/cli",
-      "@astryxdesign/core",
-      "unrs-resolver"
-    ]
   }
 }
