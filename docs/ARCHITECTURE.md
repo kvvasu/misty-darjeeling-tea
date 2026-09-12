@@ -97,9 +97,75 @@ No unlayered global CSS exists; `assert-export` and code review enforce this.
 
 163 components / 284 theming targets (94 components) — full list:
 `logs/astryx-component-inventory.txt`. **Astryx primitives are the default
-wherever an equivalent exists.** Custom components permitted only:
-`MarqueeTicker`, `PointerPillSlider`, `HandDrawnEllipse` — justified gap
-records to be finalised in Phase B below. *(Phase B)*
+wherever an equivalent exists.**
+
+### Primitives used (route inventory)
+
+| Primitive | Used for |
+|---|---|
+| `Theme` | Root provider (wadaTheme, explicit light/dark mode) |
+| `Link` | All navigation CTAs and footer link |
+| `IconButton` | Theme toggle (aria-pressed, keyboard-operable, ≥24px target) |
+| `Card` | Tea flush cards on `/teas` |
+| `TextInput` | Contact form name + email (controlled) |
+| `TextArea` | Contact form message (controlled) |
+| `Selector` | Contact form topic (accessible listbox) |
+| `FieldStatus` | Inline validation errors + form-level errors (§4.7) |
+| `Button` | Contact form submit (primary) |
+
+All interactive elements on every route are Astryx primitives; none were
+custom-built where a primitive exists.
+
+### Custom components — justified gap records
+
+1. **`MarqueeTicker`** (components/MarqueeTicker.tsx)
+   - *Gap:* Astryx's 163-component inventory contains no marquee/ticker
+     primitive (verified via `astryx component` listing).
+   - *Behaviour:* moving track is `aria-hidden`; a visually-hidden static
+     `<ul>` carries the content once for screen readers. Component self-
+     serialises content (author passes items once). `prefers-reduced-motion:
+     reduce` disables the animation entirely — static list, no auto-scroll.
+   - *Workaround attempted:* none possible with primitives; `Card`/`Banner`
+     do not animate, and hand-rolling an Astryx-adjacent scroller would patch
+     vendor internals — rejected.
+
+2. **`HandDrawnEllipse`** (components/HandDrawnEllipse.tsx)
+   - *Gap:* decorative hand-drawn ink mark is not a UI primitive in any
+     design system; Astryx correctly has no equivalent.
+   - *Behaviour:* `aria-hidden="true"`, inline SVG, no external fetch,
+     pointer-events none, accent-token colour.
+
+3. **`PointerPillSlider` — NOT BUILT (per §3.6).** The prompt anticipated a
+   custom slider, but the installed Astryx 0.6.0 ships a full-featured
+   `Slider` primitive (label, value/onChange/onChangeEnd, min/max/step,
+   `formatValue` for `aria-valuetext`, marks) — verified via
+   `astryx component Slider`. Building a custom replacement would violate
+   the "custom where a primitive exists is BLOCKING" rule. If a flush-
+   strength slider is wanted later, the primitive is the implementation.
+
+### Known primitive integration notes
+
+- Astryx form primitives do not forward an HTML `name` attribute; the contact
+  form renders hidden named inputs mirroring controlled state (Netlify field
+  registration) while Astryx carries labelling/focus/ARIA behaviour.
+- StyleX 0.19 emits class-name objects; JSX usage goes through
+  `props(styles.x)` (StyleX 0.19 API, `create` + `props`).
+
+## Routes (derived from content/site-content.md)
+
+| Route | H1 | Source section |
+|---|---|---|
+| `/` | Misty Darjeeling Tea | Page: Home |
+| `/teas/` | Our Teas | Page: Our Teas |
+| `/estate/` | Our Estate | Page: Our Estate |
+| `/brew-guide/` | Brew Guide | Page: Brew Guide |
+| `/contact/` | Contact | Page: Contact |
+| `/thank-you/` | Thank you | Page: Thank you |
+| `/404` (404.html) | Page not found | Page: Not found |
+
+All copy is used verbatim from `content/site-content.md`; framework-required
+microcopy (validation errors, sending state, no-JS fallback) is declared in
+the content file itself.
 
 ## Static boundaries
 
@@ -123,8 +189,28 @@ Full policy documented in `docs/SECURITY_HEADERS.md`. *(Phase C)*
 
 ## Image-handling tradeoff (§3.7)
 
-Documented above; per-route asset inventory in `ASSETS.md`. *(Phase B)*
+`images.unoptimized: true` (§3.7): next/image's optimizer does not run under
+static export — no on-demand resizing or format negotiation. Current site
+ships **zero raster images** (typography + token-colour-led design, inline
+SVG only), so the tradeoff currently costs nothing; if photography is added
+later it must be pre-sized and pre-formatted (e.g. AVIF/WebP variants
+committed at required breakpoints). Asset provenance: `ASSETS.md`.
 
 ## Form success/error pattern (§4.7)
 
-*(Phase B)*
+- Static export cannot redirect back with server state → dedicated
+  `/thank-you` route is the Netlify `action` target (excluded from sitemap
+  and robots).
+- Inline client-side validation with `FieldStatus` errors; form-level errors
+  (time-trap, send failure) announced via a wrapper with
+  `aria-live="polite"`.
+- Submission uses `fetch` POST (same-origin, `application/x-www-form-urlencoded`)
+  then navigates to `/thank-you/`; a no-JS `<noscript>` fallback explains
+  alternatives (copy sourced from `content/site-content.md`).
+- Spam defences (§2.3): honeypot (`company`, visually-hidden, `aria-hidden`,
+  `tabindex=-1`), 2-second time-trap, Netlify UI spam filtering, and a
+  1.5 s client debounce.
+- **Honest statement (§2.3):** the client-side debounce is a UX affordance,
+  not a security control — it is trivially bypassed by a direct POST. Real
+  gatekeeping is Netlify's honeypot heuristics, spam filtering, and the
+  100/month form quota.

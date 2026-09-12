@@ -46,7 +46,8 @@
 
   /* Honeypot: visually hidden but NOT display:none (§2.3) — kept out of the
    * accessibility tree via aria-hidden on the wrapper, tabindex="-1" on input */
-  :where(.honeypot-field) {
+  :where(.honeypot-field),
+  :where(.visually-hidden) {
     position: absolute !important;
     width: 1px !important;
     height: 1px !important;
@@ -58,7 +59,25 @@
     border: 0 !important;
   }
 
-  /* MarqueeTicker (§3.6): honour prefers-reduced-motion — no auto-scroll */
+  /* MarqueeTicker (§3.6): track layout + loop animation, token-only values.
+   * Honour prefers-reduced-motion — static list, no auto-scroll (§3.6). */
+  [data-marquee-track] {
+    display: flex;
+    width: max-content;
+    gap: var(--spacing-8);
+    padding: 0 var(--spacing-8);
+    animation: marquee-scroll 36s linear infinite;
+  }
+
+  @keyframes marquee-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
   @media (prefers-reduced-motion: reduce) {
     :where([data-marquee-track]) {
       animation: none !important;
