@@ -2,6 +2,7 @@ import type {Metadata} from 'next';
 import {Link as AstryxLink} from '@astryxdesign/core/Link';
 import {MarqueeTicker} from '../components/MarqueeTicker';
 import {HandDrawnEllipse} from '../components/HandDrawnEllipse';
+import {withBasePath} from '../lib/base-path';
 
 export const metadata: Metadata = {
   title: 'Misty Darjeeling Tea',
@@ -58,11 +59,11 @@ export default function HomePage() {
         </p>
 
         <p>
-          <AstryxLink href="/teas/" isStandalone>
+          <AstryxLink href={withBasePath('/teas/')} isStandalone>
             Explore our teas
           </AstryxLink>
           {' · '}
-          <AstryxLink href="/estate/" isStandalone>
+          <AstryxLink href={withBasePath('/estate/')} isStandalone>
             Visit the estate
           </AstryxLink>
         </p>

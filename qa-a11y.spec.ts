@@ -12,7 +12,10 @@ import {parse, rgb, formatHex, oklch, differenceCiede2000} from 'culori';
  * target sizes on the contact form.
  */
 
-const ROUTES = ['/', '/teas/', '/estate/', '/brew-guide/', '/contact/', '/thank-you/', '/404.html'];
+const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+const ROUTES = ['/', '/teas/', '/estate/', '/brew-guide/', '/contact/', '/thank-you/', '/404.html'].map(
+  r => `${BP}${r}`,
+);
 const VIEWPORTS = [
   {name: '1440', width: 1440, height: 900},
   {name: '1024', width: 1024, height: 768},
@@ -60,13 +63,13 @@ test.describe('screenshots — 4 breakpoints × 2 modes (§4.4)', () => {
       test(`home @ ${vp.name}px ${mode}`, async ({page}) => {
         await page.setViewportSize({width: vp.width, height: vp.height});
         await page.emulateMedia({colorScheme: mode});
-        await page.goto('/', {waitUntil: 'networkidle'});
+        await page.goto(`${BP}/`, {waitUntil: 'networkidle'});
         await page.screenshot({path: `qa/screenshots/home-${vp.name}-${mode}.png`, fullPage: true});
       });
       test(`teas @ ${vp.name}px ${mode}`, async ({page}) => {
         await page.setViewportSize({width: vp.width, height: vp.height});
         await page.emulateMedia({colorScheme: mode});
-        await page.goto('/teas/', {waitUntil: 'networkidle'});
+        await page.goto(`${BP}/teas/`, {waitUntil: 'networkidle'});
         await page.screenshot({path: `qa/screenshots/teas-${vp.name}-${mode}.png`, fullPage: true});
       });
     }
@@ -81,7 +84,7 @@ test.describe('palette synchronisation (§4.5)', () => {
 
     for (const mode of ['light', 'dark'] as const) {
       await page.emulateMedia({colorScheme: mode});
-      await page.goto('/', {waitUntil: 'networkidle'});
+      await page.goto(`${BP}/`, {waitUntil: 'networkidle'});
 
       const probe = await page.evaluate(() => {
         const styleOf = (el: Element) => getComputedStyle(el);
@@ -145,7 +148,7 @@ test.describe('palette synchronisation (§4.5)', () => {
     const results: Array<Record<string, unknown>> = [];
     for (const mode of ['light', 'dark'] as const) {
       await page.emulateMedia({colorScheme: mode});
-      await page.goto('/', {waitUntil: 'networkidle'});
+      await page.goto(`${BP}/`, {waitUntil: 'networkidle'});
       const probe = await page.evaluate(() => {
         const body = getComputedStyle(document.body);
         return {bg: body.backgroundColor, fg: body.color};
@@ -160,7 +163,7 @@ test.describe('palette synchronisation (§4.5)', () => {
 
 test.describe('SC 2.5.8 target size (§3.5)', () => {
   test('contact form interactive targets >= 24px', async ({page}) => {
-    await page.goto('/contact/', {waitUntil: 'networkidle'});
+    await page.goto(`${BP}/contact/`, {waitUntil: 'networkidle'});
     const targets = page.locator('button, a, input, [role="combobox"]');
     const count = await targets.count();
     const checked: Array<Record<string, unknown>> = [];
@@ -177,7 +180,7 @@ test.describe('SC 2.5.8 target size (§3.5)', () => {
   });
 
   test('theme toggle >= 24px and keyboard operable (§3.3, SC 2.5.8)', async ({page}) => {
-    await page.goto('/', {waitUntil: 'networkidle'});
+    await page.goto(`${BP}/`, {waitUntil: 'networkidle'});
     const toggle = page.getByRole('button', {name: /switch to (dark|light) mode/i});
     const box = await toggle.boundingBox();
     expect(box!.width).toBeGreaterThanOrEqual(24);

@@ -1,11 +1,40 @@
 # Security Headers
 
-Host: **Netlify** (static). The authoritative artifact is the committed,
-reviewable `public/_headers` file — Netlify serves these headers on every
-response from the deploy. The `Content-Security-Policy` hash inside it is
-**regenerated automatically on every build** by `scripts/compute-csp-hash.mjs`
-(§3.4) from the inline theme script in `app/theme-script.ts`; the file below is
-the actual committed output, not a prose recommendation.
+Host: **GitHub Pages** (project site, `https://kvvasu.github.io/misty-darjeeling-tea/`).
+GitHub Pages **cannot serve custom HTTP headers**, so the CSP is delivered as a
+`<meta http-equiv="Content-Security-Policy">` tag in every page, **injected
+post-build** by `scripts/inject-csp-meta.mjs`:
+
+1. The build emits the static export (Next.js inlines our theme script **plus**
+   its own hydration/flight bootstrap scripts — 9 distinct inline scripts).
+2. `scripts/inject-csp-meta.mjs` hashes **every inline script body found in the
+   emitted HTML** (nothing hand-maintained, never stale) and rewrites each
+   page's meta CSP with the complete `'sha256-…'` set in `script-src`.
+3. React never owns the meta tag — a React-rendered meta would be re-created at
+   hydration from the RSC payload and overwrite the patched tag (verified in
+   QA), so the tag exists only as static post-build HTML.
+
+`public/_headers` is **still generated** by `scripts/compute-csp-hash.mjs`
+(from the theme-script source) as the host-portability artifact: if the site
+moves to a host that serves custom headers (Netlify, Cloudflare Pages), the
+full header set — including header-only directives — applies unchanged.
+
+## Meta-CSP limitations (documented honestly)
+
+Browsers ignore these directives when CSP is delivered via `<meta>`; they are
+therefore **omitted from the meta policy** (and logged here as not enforceable
+on GitHub Pages — they remain in `public/_headers` for header-capable hosts):
+
+- `frame-ancestors` — not enforceable via meta. Clickjacking mitigation on GH
+  Pages relies on the `X-Frame-Options`-equivalent behaviour GH Pages does not
+  provide either; the site embeds nothing and sets no `target=` framing hooks.
+- `upgrade-insecure-requests` — not enforceable via meta (GH Pages is HTTPS-
+  only in practice, so the risk it mitigates does not arise).
+- `sandbox`, `report-uri`/`report-to` — not enforceable/meaningful via meta.
+
+Header-only (no meta equivalent exists at all) — **not enforceable on GitHub
+Pages**: HSTS, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`,
+`X-Frame-Options`. These remain in `public/_headers` for portability.
 
 ## `public/_headers` (verbatim, as committed)
 
@@ -37,12 +66,24 @@ the actual committed output, not a prose recommendation.
 Static export cannot generate per-request nonces, so:
 
 1. `app/theme-script.ts` exports the inline theme script as a single string.
-2. `scripts/compute-csp-hash.mjs` (wired as the `prebuild` step) computes its
-   SHA-256 and writes `public/_headers` with `'sha256-…'` in `script-src`.
-3. The build cannot proceed with a stale or missing hash — it is recomputed on
-   **every** build; manual hash entry is a BLOCKING failure per §3.4.
+2. `scripts/compute-csp-hash.mjs` (`prebuild`) hashes it into `public/_headers`
+   (portability artifact).
+3. `scripts/inject-csp-meta.mjs` (`postbuild`) hashes **every inline script in
+   the emitted HTML** — ours plus Next's hydration bootstraps — and writes the
+   complete hash set into each page's meta CSP. Hashes are recomputed on
+   **every** build from the artifact itself; manual hash entry is a BLOCKING
+   failure per §3.4.
 
 `'unsafe-inline'` in `script-src` would be a BLOCKING failure; it is not present.
+
+## Form hosting note (host change from Netlify)
+
+The contact form was wired for **Netlify Forms** (`data-netlify="true"`), which
+only functions when the site is hosted by Netlify. On GitHub Pages the POST to
+`/` fails by design and the form surfaces its sourced "send failed" error
+(`COPY.failure` from `content/site-content.md`) — user-approved interim
+behaviour. `form-action 'self'` is unchanged; adopting a third-party form
+service later requires adding its origin to `form-action` and `connect-src`.
 
 ## Verification
 

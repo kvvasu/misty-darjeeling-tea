@@ -3,7 +3,7 @@ import nextTs from 'eslint-config-next/typescript';
 export default [
   ...nextTs,
   {
-    ignores: ['out/**', '.next/**', 'node_modules/**', 'qa/**', 'logs/**', 'theme/template-out.css'],
+    ignores: ['out/**', '.next/**', 'node_modules/**', 'qa/**', 'logs/**', 'theme/template-out.css', '.qa-stage*/**', 'gh-pages-stage/**', 'test-results/**', 'playwright-report/**'],
   },
   {
     // CommonJS build-config files legitimately use require()

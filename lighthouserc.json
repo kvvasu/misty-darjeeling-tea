@@ -1,7 +1,7 @@
 {
   "ci": {
     "collect": {
-      "staticDistDir": "./out",
+      "staticDistDir": "./gh-pages-stage",
       "numberOfRuns": 3,
       "maxAutodiscoverUrls": 0,
       "settings": {

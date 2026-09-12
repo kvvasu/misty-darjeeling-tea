@@ -1,84 +1,84 @@
 [
   {
-    "route": "/",
+    "route": "/misty-darjeeling-tea/",
     "mode": "light",
     "criticalOrSerious": 0,
     "details": []
   },
   {
-    "route": "/",
+    "route": "/misty-darjeeling-tea/",
     "mode": "dark",
     "criticalOrSerious": 0,
     "details": []
   },
   {
-    "route": "/teas/",
+    "route": "/misty-darjeeling-tea/teas/",
     "mode": "light",
     "criticalOrSerious": 0,
     "details": []
   },
   {
-    "route": "/teas/",
+    "route": "/misty-darjeeling-tea/teas/",
     "mode": "dark",
     "criticalOrSerious": 0,
     "details": []
   },
   {
-    "route": "/estate/",
+    "route": "/misty-darjeeling-tea/estate/",
     "mode": "light",
     "criticalOrSerious": 0,
     "details": []
   },
   {
-    "route": "/estate/",
+    "route": "/misty-darjeeling-tea/estate/",
     "mode": "dark",
     "criticalOrSerious": 0,
     "details": []
   },
   {
-    "route": "/brew-guide/",
+    "route": "/misty-darjeeling-tea/brew-guide/",
     "mode": "light",
     "criticalOrSerious": 0,
     "details": []
   },
   {
-    "route": "/brew-guide/",
+    "route": "/misty-darjeeling-tea/brew-guide/",
     "mode": "dark",
     "criticalOrSerious": 0,
     "details": []
   },
   {
-    "route": "/contact/",
+    "route": "/misty-darjeeling-tea/contact/",
     "mode": "light",
     "criticalOrSerious": 0,
     "details": []
   },
   {
-    "route": "/contact/",
+    "route": "/misty-darjeeling-tea/contact/",
     "mode": "dark",
     "criticalOrSerious": 0,
     "details": []
   },
   {
-    "route": "/thank-you/",
+    "route": "/misty-darjeeling-tea/thank-you/",
     "mode": "light",
     "criticalOrSerious": 0,
     "details": []
   },
   {
-    "route": "/thank-you/",
+    "route": "/misty-darjeeling-tea/thank-you/",
     "mode": "dark",
     "criticalOrSerious": 0,
     "details": []
   },
   {
-    "route": "/404.html",
+    "route": "/misty-darjeeling-tea/404.html",
     "mode": "light",
     "criticalOrSerious": 0,
     "details": []
   },
   {
-    "route": "/404.html",
+    "route": "/misty-darjeeling-tea/404.html",
     "mode": "dark",
     "criticalOrSerious": 0,
     "details": []

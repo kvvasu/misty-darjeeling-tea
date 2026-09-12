@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import {Link as AstryxLink} from '@astryxdesign/core/Link';
+import {withBasePath} from '../../lib/base-path';
 
 export const metadata: Metadata = {
   title: 'Thank you',
@@ -17,7 +18,7 @@ export default function ThankYouPage() {
         usually faster, when the mist lifts.
       </p>
       <p>
-        <AstryxLink href="/" isStandalone>
+        <AstryxLink href={withBasePath('/')} isStandalone>
           Back to home
         </AstryxLink>
       </p>

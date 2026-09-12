@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import {Link as AstryxLink} from '@astryxdesign/core/Link';
+import {withBasePath} from '../../lib/base-path';
 
 export const metadata: Metadata = {
   title: 'Our Estate',
@@ -43,11 +44,11 @@ export default function EstatePage() {
       </section>
 
       <p>
-        <AstryxLink href="/teas/" isStandalone>
+        <AstryxLink href={withBasePath('/teas/')} isStandalone>
           Taste the difference
         </AstryxLink>
         {' · '}
-        <AstryxLink href="/contact/" isStandalone>
+        <AstryxLink href={withBasePath('/contact/')} isStandalone>
           Plan a visit
         </AstryxLink>
       </p>

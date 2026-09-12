@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import {Link as AstryxLink} from '@astryxdesign/core/Link';
+import {withBasePath} from '../../lib/base-path';
 
 export const metadata: Metadata = {
   title: 'Brew Guide',
@@ -59,7 +60,7 @@ export default function BrewGuidePage() {
       ))}
 
       <p>
-        <AstryxLink href="/teas/" isStandalone>
+        <AstryxLink href={withBasePath('/teas/')} isStandalone>
           Find your flush
         </AstryxLink>
       </p>

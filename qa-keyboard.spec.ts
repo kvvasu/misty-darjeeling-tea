@@ -11,7 +11,10 @@ import {appendFileSync} from 'node:fs';
  */
 
 const LOG = 'qa/keyboard-traversal.txt';
-const ROUTES = ['/', '/teas/', '/estate/', '/brew-guide/', '/contact/', '/thank-you/'];
+const BP = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
+const ROUTES = ['/', '/teas/', '/estate/', '/brew-guide/', '/contact/', '/thank-you/'].map(
+  r => `${BP}${r}`,
+);
 
 function describe(el: {
   tag: string; id: string; label: string | null; text: string; role: string | null;
@@ -108,7 +111,7 @@ test('keyboard traversal of every route — tab order + focus visibility (§4.4)
 });
 
 test('keyboard flow: contact form validation is reachable and announced (§4.4, §4.7)', async ({page}) => {
-  await page.goto('/contact/');
+  await page.goto(`${BP}/contact/`);
   await page.waitForLoadState('networkidle');
 
   // Walk to the submit button and press Enter with empty required fields.

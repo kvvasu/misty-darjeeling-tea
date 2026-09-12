@@ -1,5 +1,6 @@
 import type {Metadata} from 'next';
 import {Link as AstryxLink} from '@astryxdesign/core/Link';
+import {withBasePath} from '../../lib/base-path';
 import {Card} from '@astryxdesign/core/Card';
 
 export const metadata: Metadata = {
@@ -63,7 +64,7 @@ export default function TeasPage() {
           something rounder for evenings? Autumnal.
         </p>
         <p>
-          <AstryxLink href="/contact/" isStandalone>
+          <AstryxLink href={withBasePath('/contact/')} isStandalone>
             Ask us for a recommendation
           </AstryxLink>
         </p>

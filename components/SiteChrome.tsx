@@ -4,6 +4,7 @@ import Link from 'next/link';
 import {Link as AstryxLink} from '@astryxdesign/core/Link';
 import {IconButton} from '@astryxdesign/core/IconButton';
 import {useThemeMode} from '../app/theme-provider';
+import {withBasePath} from '../lib/base-path';
 
 /**
  * Site header + footer. Astryx primitives (Link, IconButton) for all
@@ -52,13 +53,14 @@ export function SiteHeader() {
       </a>
       <header>
         <nav aria-label="Primary">
+          {/* next/link applies basePath itself — do NOT wrap with withBasePath */}
           <Link href="/" style={{fontWeight: 700}}>
             Misty Darjeeling Tea
           </Link>
           <ul style={{display: 'flex', gap: 'var(--spacing-5)', listStyle: 'none'}}>
             {NAV.map(item => (
               <li key={item.href}>
-                <AstryxLink href={item.href}>{item.label}</AstryxLink>
+                <AstryxLink href={withBasePath(item.href)}>{item.label}</AstryxLink>
               </li>
             ))}
           </ul>
@@ -74,7 +76,7 @@ export function SiteFooter() {
     <footer>
       <p>© Misty Darjeeling Tea · Singbulli Road, Darjeeling district, West Bengal, India</p>
       <p>
-        <AstryxLink href="/contact/">Contact</AstryxLink>
+        <AstryxLink href={withBasePath('/contact/')}>Contact</AstryxLink>
       </p>
     </footer>
   );

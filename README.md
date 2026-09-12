@@ -1,5 +1,8 @@
 # Misty Darjeeling Tea
 
+**Live:** https://kvvasu.github.io/misty-darjeeling-tea/ (deploys automatically
+on every push to `main` via GitHub Actions — `.github/workflows/deploy.yml`).
+
 Production-grade, accessible, secure static site — Next.js (App Router,
 `output: 'export'`) + Astryx design system (source build) + Tailwind CSS v4,
 themed with Sanzo Wada-derived tokens.

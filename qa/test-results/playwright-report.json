@@ -62,7 +62,7 @@
     "version": "1.63.0",
     "workers": 2,
     "webServer": {
-      "command": "npx --yes serve out -l 4173",
+      "command": "sh -c \"rm -rf .qa-stage-misty-darjeeling-tea && mkdir -p .qa-stage-misty-darjeeling-tea/misty-darjeeling-tea && cp -r out/* .qa-stage-misty-darjeeling-tea/misty-darjeeling-tea/ && npx --yes serve .qa-stage-misty-darjeeling-tea -l 4173\"",
       "port": 4173,
       "reuseExistingServer": true,
       "timeout": 60000
@@ -79,11 +79,11 @@
         {
           "title": "axe scans — every route, both modes (§4.4)",
           "file": "qa-a11y.spec.ts",
-          "line": 46,
+          "line": 49,
           "column": 6,
           "specs": [
             {
-              "title": "/ [light]",
+              "title": "/misty-darjeeling-tea/ [light]",
               "ok": true,
               "tags": [],
               "tests": [
@@ -98,12 +98,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3606,
+                      "duration": 3234,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:40:59.984Z",
+                      "startTime": "2026-09-12T23:10:11.620Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -111,13 +111,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0ffc38c91192a4daf1d0-4630f5b220e81f38db9c",
+              "id": "0ffc38c91192a4daf1d0-f5799cc2106d26c023f9",
               "file": "qa-a11y.spec.ts",
-              "line": 49,
+              "line": 52,
               "column": 11
             },
             {
-              "title": "/ [dark]",
+              "title": "/misty-darjeeling-tea/ [dark]",
               "ok": true,
               "tags": [],
               "tests": [
@@ -132,12 +132,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3111,
+                      "duration": 2869,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:03.839Z",
+                      "startTime": "2026-09-12T23:10:15.206Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -145,13 +145,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0ffc38c91192a4daf1d0-58b2d7dddf726e36b702",
+              "id": "0ffc38c91192a4daf1d0-73a8d26b6692b3c0a19d",
               "file": "qa-a11y.spec.ts",
-              "line": 49,
+              "line": 52,
               "column": 11
             },
             {
-              "title": "/teas/ [light]",
+              "title": "/misty-darjeeling-tea/teas/ [light]",
               "ok": true,
               "tags": [],
               "tests": [
@@ -166,12 +166,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2905,
+                      "duration": 2855,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:09.438Z",
+                      "startTime": "2026-09-12T23:10:18.110Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -179,13 +179,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0ffc38c91192a4daf1d0-140cdc3844f0b0b71fae",
+              "id": "0ffc38c91192a4daf1d0-8fda67223908531011df",
               "file": "qa-a11y.spec.ts",
-              "line": 49,
+              "line": 52,
               "column": 11
             },
             {
-              "title": "/teas/ [dark]",
+              "title": "/misty-darjeeling-tea/teas/ [dark]",
               "ok": true,
               "tags": [],
               "tests": [
@@ -200,12 +200,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3119,
+                      "duration": 3004,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:12.358Z",
+                      "startTime": "2026-09-12T23:10:20.985Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -213,13 +213,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0ffc38c91192a4daf1d0-0d01901a1bb14b6f4012",
+              "id": "0ffc38c91192a4daf1d0-e8a6315ca188094a0226",
               "file": "qa-a11y.spec.ts",
-              "line": 49,
+              "line": 52,
               "column": 11
             },
             {
-              "title": "/estate/ [light]",
+              "title": "/misty-darjeeling-tea/estate/ [light]",
               "ok": true,
               "tags": [],
               "tests": [
@@ -234,12 +234,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2797,
+                      "duration": 2916,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:15.489Z",
+                      "startTime": "2026-09-12T23:10:26.406Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -247,13 +247,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0ffc38c91192a4daf1d0-0b0d7911f4728fddfb88",
+              "id": "0ffc38c91192a4daf1d0-76801330eb45e4f22001",
               "file": "qa-a11y.spec.ts",
-              "line": 49,
+              "line": 52,
               "column": 11
             },
             {
-              "title": "/estate/ [dark]",
+              "title": "/misty-darjeeling-tea/estate/ [dark]",
               "ok": true,
               "tags": [],
               "tests": [
@@ -268,12 +268,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2547,
+                      "duration": 2763,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:18.303Z",
+                      "startTime": "2026-09-12T23:10:29.339Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -281,13 +281,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0ffc38c91192a4daf1d0-f9ab8589e949dbfb8c79",
+              "id": "0ffc38c91192a4daf1d0-e7f86fb4dcde88af1139",
               "file": "qa-a11y.spec.ts",
-              "line": 49,
+              "line": 52,
               "column": 11
             },
             {
-              "title": "/brew-guide/ [light]",
+              "title": "/misty-darjeeling-tea/brew-guide/ [light]",
               "ok": true,
               "tags": [],
               "tests": [
@@ -302,12 +302,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2551,
+                      "duration": 2619,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:20.860Z",
+                      "startTime": "2026-09-12T23:10:32.121Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -315,13 +315,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0ffc38c91192a4daf1d0-f3629f20708fa79ef56a",
+              "id": "0ffc38c91192a4daf1d0-7928e925b231325a7682",
               "file": "qa-a11y.spec.ts",
-              "line": 49,
+              "line": 52,
               "column": 11
             },
             {
-              "title": "/brew-guide/ [dark]",
+              "title": "/misty-darjeeling-tea/brew-guide/ [dark]",
               "ok": true,
               "tags": [],
               "tests": [
@@ -336,12 +336,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2609,
+                      "duration": 2554,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:23.425Z",
+                      "startTime": "2026-09-12T23:10:34.755Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -349,13 +349,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0ffc38c91192a4daf1d0-a16b3af98958c1dfb452",
+              "id": "0ffc38c91192a4daf1d0-906437911c8ef6109122",
               "file": "qa-a11y.spec.ts",
-              "line": 49,
+              "line": 52,
               "column": 11
             },
             {
-              "title": "/contact/ [light]",
+              "title": "/misty-darjeeling-tea/contact/ [light]",
               "ok": true,
               "tags": [],
               "tests": [
@@ -370,12 +370,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3395,
+                      "duration": 3251,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:26.048Z",
+                      "startTime": "2026-09-12T23:10:37.325Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -383,13 +383,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0ffc38c91192a4daf1d0-d6b721c0c2ff754d5f3c",
+              "id": "0ffc38c91192a4daf1d0-2e4978e644263ea075cb",
               "file": "qa-a11y.spec.ts",
-              "line": 49,
+              "line": 52,
               "column": 11
             },
             {
-              "title": "/contact/ [dark]",
+              "title": "/misty-darjeeling-tea/contact/ [dark]",
               "ok": true,
               "tags": [],
               "tests": [
@@ -404,12 +404,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 3338,
+                      "duration": 3315,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:29.458Z",
+                      "startTime": "2026-09-12T23:10:40.595Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -417,13 +417,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0ffc38c91192a4daf1d0-a21ba4c83ca1363b8a4e",
+              "id": "0ffc38c91192a4daf1d0-d0928131c43fa702a633",
               "file": "qa-a11y.spec.ts",
-              "line": 49,
+              "line": 52,
               "column": 11
             },
             {
-              "title": "/thank-you/ [light]",
+              "title": "/misty-darjeeling-tea/thank-you/ [light]",
               "ok": true,
               "tags": [],
               "tests": [
@@ -438,12 +438,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2601,
+                      "duration": 2536,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:32.819Z",
+                      "startTime": "2026-09-12T23:10:43.923Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -451,13 +451,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0ffc38c91192a4daf1d0-8ac8c6d853bcfc4d5d6a",
+              "id": "0ffc38c91192a4daf1d0-5dbc7ed8892418571b19",
               "file": "qa-a11y.spec.ts",
-              "line": 49,
+              "line": 52,
               "column": 11
             },
             {
-              "title": "/thank-you/ [dark]",
+              "title": "/misty-darjeeling-tea/thank-you/ [dark]",
               "ok": true,
               "tags": [],
               "tests": [
@@ -472,12 +472,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2599,
+                      "duration": 2468,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:35.436Z",
+                      "startTime": "2026-09-12T23:10:46.472Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -485,13 +485,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0ffc38c91192a4daf1d0-0ea0896b01b661dc30bc",
+              "id": "0ffc38c91192a4daf1d0-c85cf5777e46df71c471",
               "file": "qa-a11y.spec.ts",
-              "line": 49,
+              "line": 52,
               "column": 11
             },
             {
-              "title": "/404.html [light]",
+              "title": "/misty-darjeeling-tea/404.html [light]",
               "ok": true,
               "tags": [],
               "tests": [
@@ -506,12 +506,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2590,
+                      "duration": 2602,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:38.046Z",
+                      "startTime": "2026-09-12T23:10:48.955Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -519,13 +519,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "0ffc38c91192a4daf1d0-e5431e4c1c519ce90438",
+              "id": "0ffc38c91192a4daf1d0-d43185593bb9523c1eb2",
               "file": "qa-a11y.spec.ts",
-              "line": 49,
+              "line": 52,
               "column": 11
             },
             {
-              "title": "/404.html [dark]",
+              "title": "/misty-darjeeling-tea/404.html [dark]",
               "ok": true,
               "tags": [],
               "tests": [
@@ -540,12 +540,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2663,
+                      "duration": 2541,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:40.646Z",
+                      "startTime": "2026-09-12T23:10:51.568Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -553,9 +553,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "0ffc38c91192a4daf1d0-ddc6eca2283a17c52ea0",
+              "id": "0ffc38c91192a4daf1d0-2019ef658cf1e5228f83",
               "file": "qa-a11y.spec.ts",
-              "line": 49,
+              "line": 52,
               "column": 11
             }
           ]
@@ -563,7 +563,7 @@
         {
           "title": "screenshots — 4 breakpoints × 2 modes (§4.4)",
           "file": "qa-a11y.spec.ts",
-          "line": 57,
+          "line": 60,
           "column": 6,
           "specs": [
             {
@@ -582,12 +582,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2311,
+                      "duration": 2249,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:45.897Z",
+                      "startTime": "2026-09-12T23:10:54.122Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -597,7 +597,7 @@
               ],
               "id": "0ffc38c91192a4daf1d0-987ea1161a51a455b473",
               "file": "qa-a11y.spec.ts",
-              "line": 60,
+              "line": 63,
               "column": 11
             },
             {
@@ -616,12 +616,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2239,
+                      "duration": 2040,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:48.220Z",
+                      "startTime": "2026-09-12T23:10:56.388Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -631,7 +631,7 @@
               ],
               "id": "0ffc38c91192a4daf1d0-8972293d0bbbf0b3bd1a",
               "file": "qa-a11y.spec.ts",
-              "line": 66,
+              "line": 69,
               "column": 11
             },
             {
@@ -650,12 +650,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2261,
+                      "duration": 2371,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:50.473Z",
+                      "startTime": "2026-09-12T23:11:00.806Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -665,7 +665,7 @@
               ],
               "id": "0ffc38c91192a4daf1d0-fbad67881cab3e0472f0",
               "file": "qa-a11y.spec.ts",
-              "line": 60,
+              "line": 63,
               "column": 11
             },
             {
@@ -684,12 +684,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2155,
+                      "duration": 2493,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:52.751Z",
+                      "startTime": "2026-09-12T23:11:03.197Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -699,11 +699,215 @@
               ],
               "id": "0ffc38c91192a4daf1d0-ba3a24630d4f008907fe",
               "file": "qa-a11y.spec.ts",
-              "line": 66,
+              "line": 69,
               "column": 11
             },
             {
               "title": "home @ 1024px light",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2152,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-12T23:11:05.712Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0ffc38c91192a4daf1d0-82631b86ed8a246450f1",
+              "file": "qa-a11y.spec.ts",
+              "line": 63,
+              "column": 11
+            },
+            {
+              "title": "teas @ 1024px light",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2146,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-12T23:11:07.890Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0ffc38c91192a4daf1d0-db2cdc0486785f65862b",
+              "file": "qa-a11y.spec.ts",
+              "line": 69,
+              "column": 11
+            },
+            {
+              "title": "home @ 1024px dark",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2211,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-12T23:11:10.048Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0ffc38c91192a4daf1d0-504b28cda0658b4de72f",
+              "file": "qa-a11y.spec.ts",
+              "line": 63,
+              "column": 11
+            },
+            {
+              "title": "teas @ 1024px dark",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2128,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-12T23:11:12.272Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0ffc38c91192a4daf1d0-81ccf838f24761179b96",
+              "file": "qa-a11y.spec.ts",
+              "line": 69,
+              "column": 11
+            },
+            {
+              "title": "home @ 768px light",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2145,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-12T23:11:14.416Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0ffc38c91192a4daf1d0-bc5644d02f89dbe57128",
+              "file": "qa-a11y.spec.ts",
+              "line": 63,
+              "column": 11
+            },
+            {
+              "title": "teas @ 768px light",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2148,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-09-12T23:11:16.578Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "0ffc38c91192a4daf1d0-fd172992e398abb260dd",
+              "file": "qa-a11y.spec.ts",
+              "line": 69,
+              "column": 11
+            },
+            {
+              "title": "home @ 768px dark",
               "ok": true,
               "tags": [],
               "tests": [
@@ -723,211 +927,7 @@
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:41:54.918Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "0ffc38c91192a4daf1d0-82631b86ed8a246450f1",
-              "file": "qa-a11y.spec.ts",
-              "line": 60,
-              "column": 11
-            },
-            {
-              "title": "teas @ 1024px light",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "",
-                  "projectName": "",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2155,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-12T21:41:57.104Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "0ffc38c91192a4daf1d0-db2cdc0486785f65862b",
-              "file": "qa-a11y.spec.ts",
-              "line": 66,
-              "column": 11
-            },
-            {
-              "title": "home @ 1024px dark",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "",
-                  "projectName": "",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2201,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-12T21:41:59.270Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "0ffc38c91192a4daf1d0-504b28cda0658b4de72f",
-              "file": "qa-a11y.spec.ts",
-              "line": 60,
-              "column": 11
-            },
-            {
-              "title": "teas @ 1024px dark",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "",
-                  "projectName": "",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2115,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-12T21:42:01.488Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "0ffc38c91192a4daf1d0-81ccf838f24761179b96",
-              "file": "qa-a11y.spec.ts",
-              "line": 66,
-              "column": 11
-            },
-            {
-              "title": "home @ 768px light",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "",
-                  "projectName": "",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2200,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-12T21:42:03.614Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "0ffc38c91192a4daf1d0-bc5644d02f89dbe57128",
-              "file": "qa-a11y.spec.ts",
-              "line": 60,
-              "column": 11
-            },
-            {
-              "title": "teas @ 768px light",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "",
-                  "projectName": "",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2161,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-12T21:42:05.829Z",
-                      "annotations": [],
-                      "attachments": []
-                    }
-                  ],
-                  "status": "expected"
-                }
-              ],
-              "id": "0ffc38c91192a4daf1d0-fd172992e398abb260dd",
-              "file": "qa-a11y.spec.ts",
-              "line": 66,
-              "column": 11
-            },
-            {
-              "title": "home @ 768px dark",
-              "ok": true,
-              "tags": [],
-              "tests": [
-                {
-                  "timeout": 30000,
-                  "annotations": [],
-                  "expectedStatus": "passed",
-                  "projectId": "",
-                  "projectName": "",
-                  "results": [
-                    {
-                      "workerIndex": 0,
-                      "parallelIndex": 0,
-                      "status": "passed",
-                      "duration": 2318,
-                      "errors": [],
-                      "stdout": [],
-                      "stderr": [],
-                      "retry": 0,
-                      "startTime": "2026-09-12T21:42:08.003Z",
+                      "startTime": "2026-09-12T23:11:18.741Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -937,7 +937,7 @@
               ],
               "id": "0ffc38c91192a4daf1d0-8f8b41d5295c03482c7c",
               "file": "qa-a11y.spec.ts",
-              "line": 60,
+              "line": 63,
               "column": 11
             },
             {
@@ -956,12 +956,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2212,
+                      "duration": 2147,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:42:10.332Z",
+                      "startTime": "2026-09-12T23:11:20.927Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -971,7 +971,7 @@
               ],
               "id": "0ffc38c91192a4daf1d0-b7b73b987ad176a37338",
               "file": "qa-a11y.spec.ts",
-              "line": 66,
+              "line": 69,
               "column": 11
             },
             {
@@ -990,12 +990,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2282,
+                      "duration": 2151,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:42:12.558Z",
+                      "startTime": "2026-09-12T23:11:23.088Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1005,7 +1005,7 @@
               ],
               "id": "0ffc38c91192a4daf1d0-49b514b4c575a67a80a5",
               "file": "qa-a11y.spec.ts",
-              "line": 60,
+              "line": 63,
               "column": 11
             },
             {
@@ -1024,12 +1024,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2186,
+                      "duration": 2107,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:42:14.861Z",
+                      "startTime": "2026-09-12T23:11:25.254Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1039,7 +1039,7 @@
               ],
               "id": "0ffc38c91192a4daf1d0-d38f2200a16b903b8ae4",
               "file": "qa-a11y.spec.ts",
-              "line": 66,
+              "line": 69,
               "column": 11
             },
             {
@@ -1058,12 +1058,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2314,
+                      "duration": 2306,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:42:19.582Z",
+                      "startTime": "2026-09-12T23:11:27.372Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1073,7 +1073,7 @@
               ],
               "id": "0ffc38c91192a4daf1d0-967b279459f89b85840c",
               "file": "qa-a11y.spec.ts",
-              "line": 60,
+              "line": 63,
               "column": 11
             },
             {
@@ -1092,12 +1092,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2197,
+                      "duration": 2131,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:42:21.916Z",
+                      "startTime": "2026-09-12T23:11:29.689Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1107,7 +1107,7 @@
               ],
               "id": "0ffc38c91192a4daf1d0-06831c968a2c96291c96",
               "file": "qa-a11y.spec.ts",
-              "line": 66,
+              "line": 69,
               "column": 11
             }
           ]
@@ -1115,7 +1115,7 @@
         {
           "title": "palette synchronisation (§4.5)",
           "file": "qa-a11y.spec.ts",
-          "line": 76,
+          "line": 79,
           "column": 6,
           "specs": [
             {
@@ -1134,12 +1134,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2769,
+                      "duration": 2720,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:42:24.128Z",
+                      "startTime": "2026-09-12T23:11:31.836Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1149,7 +1149,7 @@
               ],
               "id": "0ffc38c91192a4daf1d0-8042dd7bd1718461228d",
               "file": "qa-a11y.spec.ts",
-              "line": 79,
+              "line": 82,
               "column": 7
             },
             {
@@ -1168,12 +1168,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2665,
+                      "duration": 2826,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:42:26.913Z",
+                      "startTime": "2026-09-12T23:11:37.029Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1183,7 +1183,7 @@
               ],
               "id": "0ffc38c91192a4daf1d0-9782a969dc826c57179e",
               "file": "qa-a11y.spec.ts",
-              "line": 133,
+              "line": 136,
               "column": 7
             }
           ]
@@ -1191,7 +1191,7 @@
         {
           "title": "SC 2.5.8 target size (§3.5)",
           "file": "qa-a11y.spec.ts",
-          "line": 161,
+          "line": 164,
           "column": 6,
           "specs": [
             {
@@ -1210,12 +1210,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2854,
+                      "duration": 2959,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:42:29.593Z",
+                      "startTime": "2026-09-12T23:11:39.868Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1225,7 +1225,7 @@
               ],
               "id": "0ffc38c91192a4daf1d0-6c14aa0bd16442f37e52",
               "file": "qa-a11y.spec.ts",
-              "line": 162,
+              "line": 165,
               "column": 7
             },
             {
@@ -1244,12 +1244,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2308,
+                      "duration": 2348,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-09-12T21:42:32.459Z",
+                      "startTime": "2026-09-12T23:11:42.840Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -1259,7 +1259,7 @@
               ],
               "id": "0ffc38c91192a4daf1d0-db989e10620527efef11",
               "file": "qa-a11y.spec.ts",
-              "line": 179,
+              "line": 182,
               "column": 7
             }
           ]
@@ -1288,12 +1288,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 10713,
+                  "duration": 10396,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-12T21:40:59.946Z",
+                  "startTime": "2026-09-12T23:10:11.553Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1303,7 +1303,7 @@
           ],
           "id": "6a750421c6e57e984d04-b03a256ddcd4fbaa1510",
           "file": "qa-keyboard.spec.ts",
-          "line": 27,
+          "line": 30,
           "column": 5
         },
         {
@@ -1322,12 +1322,12 @@
                   "workerIndex": 1,
                   "parallelIndex": 1,
                   "status": "passed",
-                  "duration": 3498,
+                  "duration": 3528,
                   "errors": [],
                   "stdout": [],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2026-09-12T21:41:13.366Z",
+                  "startTime": "2026-09-12T23:10:22.364Z",
                   "annotations": [],
                   "attachments": []
                 }
@@ -1337,7 +1337,7 @@
           ],
           "id": "6a750421c6e57e984d04-fd607b22c9264bbb91f0",
           "file": "qa-keyboard.spec.ts",
-          "line": 110,
+          "line": 113,
           "column": 5
         }
       ]
@@ -1345,8 +1345,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-09-12T21:40:55.088Z",
-    "duration": 92266.957,
+    "startTime": "2026-09-12T23:10:05.118Z",
+    "duration": 92987.703,
     "expected": 36,
     "skipped": 0,
     "unexpected": 0,

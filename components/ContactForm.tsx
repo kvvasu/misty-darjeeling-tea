@@ -1,6 +1,7 @@
 'use client';
 
 import {useId, useRef, useState, type FormEvent} from 'react';
+import {BASE_PATH} from '../lib/base-path';
 import {Button} from '@astryxdesign/core/Button';
 import {TextInput} from '@astryxdesign/core/TextInput';
 import {TextArea} from '@astryxdesign/core/TextArea';
@@ -92,13 +93,14 @@ export function ContactForm() {
         topic,
         message,
       });
-      const res = await fetch('/', {
+      // basePath-aware: GitHub Pages project site serves under /misty-darjeeling-tea/
+      const res = await fetch(`${BASE_PATH}/`, {
         method: 'POST',
         headers: {'Content-Type': 'application/x-www-form-urlencoded'},
         body: body.toString(),
       });
       if (!res.ok) throw new Error('send failed');
-      window.location.assign('/thank-you/');
+      window.location.assign(`${BASE_PATH}/thank-you/`);
     } catch {
       setFormError(COPY.failure);
       setSubmitting(false);
@@ -111,7 +113,7 @@ export function ContactForm() {
       method="POST"
       data-netlify="true"
       netlify-honeypot="company"
-      action="/thank-you/"
+      action={`${BASE_PATH}/thank-you/`}
       onSubmit={onSubmit}
       noValidate
     >
