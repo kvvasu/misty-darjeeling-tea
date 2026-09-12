@@ -1,7 +1,7 @@
 # Architecture — Misty Darjeeling Tea
 
-> Status: **Checkpoint A (Foundations)**. Sections marked *(Phase B/C)* are filled
-> in as those phases complete.
+> Status: **Checkpoint C (QA & Ship) — complete.** Sections marked *(Phase B/C)*
+> were filled in as those phases completed.
 
 ## Stack (all versions pinned exact, §0.4)
 
@@ -214,3 +214,50 @@ committed at required breakpoints). Asset provenance: `ASSETS.md`.
   not a security control — it is trivially bypassed by a direct POST. Real
   gatekeeping is Netlify's honeypot heuristics, spam filtering, and the
   100/month form quota.
+
+## Performance decisions (Phase C, evidence-driven)
+
+Initial load measured ~533 KB gz JS on the first Lighthouse run (Performance
+49–62). Two causes, both fixed and re-measured:
+
+1. **Barrel import pulled all 163 Astryx components.**
+   `import {Theme} from '@astryxdesign/core'` dragged every component's
+   implementation into the client bundle (~312 KB unused JS, Lighthouse
+   estimate). Fix: subpath import `@astryxdesign/core/theme` (exports `Theme`
+   + theme authoring APIs only). All other primitives were already subpath
+   imports.
+2. **Legacy transpilation bloat.** `browserslist` now targets the last two
+   versions of evergreen browsers, cutting regenerator/polyfill output
+   (polyfills chunk dropped from the initial set).
+
+Result: initial JS **243 KB gz** (home route, measured from emitted HTML);
+Lighthouse Performance **95–98** across all routes.
+
+### Rejected alternative — pre-built package consumption (recorded per §4.8)
+
+The vendor README documents a "pre-built" mode (import `astryx.css`, drop the
+babel/PostCSS pipeline, keep SWC). An attempt to switch was **reverted**:
+verification showed `@astryxdesign/core`'s `dist/` ships **uncompiled**
+`stylex.defineVars` calls — the runtime throws
+`Unexpected 'stylex.defineVars' call at runtime` — and the `<Theme>` provider
+(that the entire token-bridge architecture depends on) imports the token
+module unconditionally. The vendor's own `next.js` source states the pre-built
+path means *dropping* `withAstryx()`, which is incompatible with consuming
+`dist/` at all. The source build is therefore not a stylistic choice but a
+functional requirement of this Astryx version.
+
+## Lighthouse CI configuration notes (§4.6)
+
+- **All 9 exported routes** are collected: LHCI's default `maxAutodiscoverUrls`
+  is 5 (silently truncated the set — found and fixed); set to `0` = unlimited.
+- Assertions use `assertMatrix`: Performance/Accessibility/Best-Practices ≥ 90
+  on every route; **SEO ≥ 90 only on canonical routes** — `404.html`,
+  `_not-found`, and `/thank-you` are `noindex` **by design** (404s are
+  crawl-blocked by Next; a transactional confirmation page must not be
+  indexed), which Lighthouse's `is-crawlable` audit scores 0 regardless of
+  intent. Excluding them is the correct interpretation, not a suppression.
+- Runs: mobile default emulation, simulated throttling, 3 runs, medians
+  aggregated by `scripts/median-lighthouse.mjs` → `qa/lighthouse/`.
+- `CHROME_PATH` points at the Playwright Chromium (the LHCI default Chrome
+  discovery grabbed a Windows binary across the WSL boundary — environment
+  quirk, not a project dependency).

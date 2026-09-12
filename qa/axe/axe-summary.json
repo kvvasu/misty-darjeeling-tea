@@ -1,0 +1,86 @@
+[
+  {
+    "route": "/",
+    "mode": "light",
+    "criticalOrSerious": 0,
+    "details": []
+  },
+  {
+    "route": "/",
+    "mode": "dark",
+    "criticalOrSerious": 0,
+    "details": []
+  },
+  {
+    "route": "/teas/",
+    "mode": "light",
+    "criticalOrSerious": 0,
+    "details": []
+  },
+  {
+    "route": "/teas/",
+    "mode": "dark",
+    "criticalOrSerious": 0,
+    "details": []
+  },
+  {
+    "route": "/estate/",
+    "mode": "light",
+    "criticalOrSerious": 0,
+    "details": []
+  },
+  {
+    "route": "/estate/",
+    "mode": "dark",
+    "criticalOrSerious": 0,
+    "details": []
+  },
+  {
+    "route": "/brew-guide/",
+    "mode": "light",
+    "criticalOrSerious": 0,
+    "details": []
+  },
+  {
+    "route": "/brew-guide/",
+    "mode": "dark",
+    "criticalOrSerious": 0,
+    "details": []
+  },
+  {
+    "route": "/contact/",
+    "mode": "light",
+    "criticalOrSerious": 0,
+    "details": []
+  },
+  {
+    "route": "/contact/",
+    "mode": "dark",
+    "criticalOrSerious": 0,
+    "details": []
+  },
+  {
+    "route": "/thank-you/",
+    "mode": "light",
+    "criticalOrSerious": 0,
+    "details": []
+  },
+  {
+    "route": "/thank-you/",
+    "mode": "dark",
+    "criticalOrSerious": 0,
+    "details": []
+  },
+  {
+    "route": "/404.html",
+    "mode": "light",
+    "criticalOrSerious": 0,
+    "details": []
+  },
+  {
+    "route": "/404.html",
+    "mode": "dark",
+    "criticalOrSerious": 0,
+    "details": []
+  }
+]

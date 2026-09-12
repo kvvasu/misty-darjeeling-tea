@@ -158,8 +158,8 @@
     --color-text-primary: light-dark(#051230, #ece4d2);
     --color-text-secondary: light-dark(#34454c, #b6bfc1);
     --color-text-disabled: light-dark(#A08D82, #6C5B50);
-    --color-text-accent: light-dark(#c55348, #e28579);
-    --color-icon-accent: light-dark(#c55348, #e28579);
+    --color-text-accent: light-dark(#bd4b41, #e28579);
+    --color-icon-accent: light-dark(#bd4b41, #e28579);
     --color-icon-primary: light-dark(#231A13, #EEE0D7);
     --color-icon-secondary: light-dark(#53443A, #BBA79C);
     --color-icon-disabled: light-dark(#A08D82, #6C5B50);

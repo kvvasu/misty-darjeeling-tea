@@ -9,8 +9,11 @@
  * hydration, and the toggle writes localStorage + updates the attribute via
  * <Theme mode={...}> (Astryx Theme keeps data-theme and color-scheme in sync).
  */
-import {createContext, useContext, useEffect, useState, type ReactNode} from 'react';
-import {Theme} from '@astryxdesign/core';
+import {createContext, useContext, useState, type ReactNode} from 'react';
+// Subpath import — the root barrel pulls all 163 components into the client
+// bundle (Lighthouse: 312 KiB unused JS). The theme subpath exports Theme,
+// MediaTheme, and the theme authoring APIs without the component barrel.
+import {Theme} from '@astryxdesign/core/theme';
 import {wadaTheme} from '../theme/wada-theme';
 
 type Mode = 'light' | 'dark';
@@ -23,13 +26,15 @@ const ModeContext = createContext<{mode: Mode; toggle: () => void}>({
 export const useThemeMode = () => useContext(ModeContext);
 
 export function ThemeModeProvider({children}: {children: ReactNode}) {
-  const [mode, setMode] = useState<Mode>('light');
-
-  // Adopt whatever the blocking script already resolved on <html>.
-  useEffect(() => {
+  // Initial state is read from the DOM during the hydration render — BEFORE
+  // any effects run. Reading in a useEffect would be too late: Astryx's
+  // <Theme> child effect syncs data-theme from React state first, clobbering
+  // the value the blocking <head> script set pre-paint (verified in QA).
+  const [mode, setMode] = useState<Mode>(() => {
+    if (typeof document === 'undefined') return 'light';
     const attr = document.documentElement.getAttribute('data-theme');
-    if (attr === 'dark' || attr === 'light') setMode(attr);
-  }, []);
+    return attr === 'dark' ? 'dark' : 'light';
+  });
 
   const toggle = () => {
     setMode(m => {

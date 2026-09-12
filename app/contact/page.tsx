@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <main id="main">
+    <main id="main" tabIndex={-1}>
       <h1>Contact</h1>
       <p>
         Questions about lots, shipping, or wholesale? Write to us — a human

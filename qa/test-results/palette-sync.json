@@ -1,0 +1,74 @@
+[
+  {
+    "mode": "light",
+    "prop": "pageBg",
+    "token": "color-surface-page",
+    "rendered": "rgb(250, 246, 236)",
+    "docHex": "#faf6ec",
+    "deltaE2000": 0,
+    "pass": true
+  },
+  {
+    "mode": "light",
+    "prop": "bodyText",
+    "token": "color-text-primary",
+    "rendered": "rgb(5, 18, 48)",
+    "docHex": "#051230",
+    "deltaE2000": 0,
+    "pass": true
+  },
+  {
+    "mode": "light",
+    "prop": "headingText",
+    "token": "color-text-primary",
+    "rendered": "rgb(5, 18, 48)",
+    "docHex": "#051230",
+    "deltaE2000": 0,
+    "pass": true
+  },
+  {
+    "mode": "light",
+    "prop": "linkText",
+    "token": "color-text-accent",
+    "rendered": "rgb(189, 75, 65)",
+    "docHex": "#bd4b41",
+    "deltaE2000": 0,
+    "pass": true
+  },
+  {
+    "mode": "dark",
+    "prop": "pageBg",
+    "token": "color-surface-page",
+    "rendered": "rgb(23, 20, 16)",
+    "docHex": "#171410",
+    "deltaE2000": 0,
+    "pass": true
+  },
+  {
+    "mode": "dark",
+    "prop": "bodyText",
+    "token": "color-text-primary",
+    "rendered": "rgb(236, 228, 210)",
+    "docHex": "#ece4d2",
+    "deltaE2000": 0,
+    "pass": true
+  },
+  {
+    "mode": "dark",
+    "prop": "headingText",
+    "token": "color-text-primary",
+    "rendered": "rgb(236, 228, 210)",
+    "docHex": "#ece4d2",
+    "deltaE2000": 0,
+    "pass": true
+  },
+  {
+    "mode": "dark",
+    "prop": "linkText",
+    "token": "color-text-accent",
+    "rendered": "rgb(226, 133, 121)",
+    "docHex": "#e2857a",
+    "deltaE2000": 0.349,
+    "pass": true
+  }
+]

@@ -35,7 +35,7 @@ const GUIDES = [
 
 export default function BrewGuidePage() {
   return (
-    <main id="main">
+    <main id="main" tabIndex={-1}>
       <h1>Brew Guide</h1>
       <p>
         Darjeeling is delicate. Water too hot or steep too long and the muscatel

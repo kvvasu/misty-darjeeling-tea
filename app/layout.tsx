@@ -34,7 +34,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: {children: React.ReactNode}) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning data-astryx-theme="wada">
       <head>
         {/* §3.3 — blocking pre-paint theme resolution. Authorised in CSP by an
             auto-computed SHA-256 hash (§3.4); never add 'unsafe-inline'. */}

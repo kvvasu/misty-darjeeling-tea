@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function EstatePage() {
   return (
-    <main id="main">
+    <main id="main" tabIndex={-1}>
       <h1>Our Estate</h1>
       <p>
         One garden on the ridgeline above the Rungbong valley. Sixty hectares of

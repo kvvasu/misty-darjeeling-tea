@@ -34,7 +34,7 @@ const COMMON = ['50 g tin', 'Lot-stamped and dated', 'Plucked by hand'];
 
 export default function TeasPage() {
   return (
-    <main id="main">
+    <main id="main" tabIndex={-1}>
       <h1>Our Teas</h1>
       <p>
         Every tea we sell is grown, made, and packed on one estate. Flushes are

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ThankYouPage() {
   return (
-    <main id="main">
+    <main id="main" tabIndex={-1}>
       <h1>Thank you</h1>
       <p>
         Your message is in our inbox. We reply within two working days —

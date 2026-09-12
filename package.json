@@ -6,6 +6,12 @@
   "engines": {
     "node": ">=24"
   },
+  "browserslist": [
+    "last 2 chrome versions",
+    "last 2 firefox versions",
+    "last 2 safari versions",
+    "last 2 edge versions"
+  ],
   "scripts": {
     "dev": "next dev --webpack",
     "prebuild": "node scripts/compute-csp-hash.mjs",

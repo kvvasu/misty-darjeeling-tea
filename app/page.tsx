@@ -27,7 +27,7 @@ const STEPS = [
 
 export default function HomePage() {
   return (
-    <main id="main">
+    <main id="main" tabIndex={-1}>
       <h1>
         Misty Darjeeling Tea
         <HandDrawnEllipse width={220} />

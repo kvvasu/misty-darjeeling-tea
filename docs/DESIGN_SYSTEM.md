@@ -42,7 +42,7 @@ text/background pair meets WCAG 2.2 AA in **both** modes. Body text targets ≥7
 | `color-border-subtle` | Hairline borders, dividers | Ivory Buff (#102) — darkened | `oklch(0.8867 0.0351 89)` | `#e3d9c0` | `oklch(0.3256 0.0183 74)` | `#3a332a` |
 | `color-action-primary` | Primary buttons, key CTAs | Orange Rufous (#102) | `oklch(0.5706 0.1346 54)` | `#b35d15` | `oklch(0.7134 0.1311 56)` | `#e08b4a` |
 | `color-action-primary-hover` | Primary action hover state | Orange Rufous (#102) — darkened | `oklch(0.5226 0.1346 54)` | `#a34f00` | `oklch(0.7134 0.1311 56)` | `#e08b4a` |
-| `color-accent` | Accent highlights (Etruscan Red) | Etruscan Red (#137) | `oklch(0.587 0.1485 28)` | `#c55348` | `oklch(0.7134 0.1163 28)` | `#e28579` |
+| `color-accent` | Accent highlights (Etruscan Red) | Etruscan Red (#137) | `oklch(0.563 0.1485 28)` | `#bd4b41` | `oklch(0.7134 0.1163 28)` | `#e28579` |
 | `color-accent-soft` | Accent tint background | Etruscan Red (#137) — tint | `oklch(0.9308 0.0227 31)` | `#f7e3df` | `oklch(0.2918 0.0315 32)` | `#3a2622` |
 | `color-focus-ring` | Focus indicator (≥3:1 adjacent) | Orange Rufous (#102) — darkened | `oklch(0.478 0.1082 56)` | `#8a4a11` | `oklch(0.7903 0.1061 54)` | `#f0a878` |
 | `color-status-success` | Success status text/icons | Pistachio Green (#137) | `oklch(0.4769 0.0881 154)` | `#2e6b45` | `oklch(0.7319 0.0807 157)` | `#7db894` |
@@ -59,6 +59,7 @@ text/background pair meets WCAG 2.2 AA in **both** modes. Body text targets ≥7
 | light | `color-text-primary` | surface-raised | 18.49:1 | 4.5:1 | PASS |
 | light | `color-text-secondary` | surface-page | 9.26:1 | 4.5:1 | PASS |
 | light | `color-text-secondary` | surface-raised | 9.99:1 | 4.5:1 | PASS |
+| light | `color-text-accent (Link text)` | surface-page | 4.58:1 | 4.5:1 | PASS |
 | light | `color-text-on-action` | action-primary | 4.59:1 | 4.5:1 | PASS |
 | light | `color-focus-ring` | surface-page | 6.34:1 | 3:1 | PASS |
 | light | `color-focus-ring` | surface-raised | 6.84:1 | 3:1 | PASS |
@@ -70,6 +71,7 @@ text/background pair meets WCAG 2.2 AA in **both** modes. Body text targets ≥7
 | dark | `color-text-primary` | surface-raised | 13.1:1 | 4.5:1 | PASS |
 | dark | `color-text-secondary` | surface-page | 9.8:1 | 4.5:1 | PASS |
 | dark | `color-text-secondary` | surface-raised | 8.85:1 | 4.5:1 | PASS |
+| dark | `color-text-accent (Link text)` | surface-page | 6.88:1 | 4.5:1 | PASS |
 | dark | `color-text-on-action` | action-primary | 7.01:1 | 4.5:1 | PASS |
 | dark | `color-focus-ring` | surface-page | 9.25:1 | 3:1 | PASS |
 | dark | `color-focus-ring` | surface-raised | 8.35:1 | 3:1 | PASS |

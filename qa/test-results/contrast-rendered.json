@@ -1,0 +1,16 @@
+[
+  {
+    "mode": "light",
+    "fg": "rgb(5, 18, 48)",
+    "bg": "rgb(250, 246, 236)",
+    "ratio": 17.13,
+    "pass": true
+  },
+  {
+    "mode": "dark",
+    "fg": "rgb(236, 228, 210)",
+    "bg": "rgb(23, 20, 16)",
+    "ratio": 14.51,
+    "pass": true
+  }
+]

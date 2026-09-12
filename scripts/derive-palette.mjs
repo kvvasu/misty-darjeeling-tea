@@ -93,7 +93,7 @@ export const LIGHT = {
   'color-border-subtle': toOklch('#e3d9c0'),
   'color-action-primary': adjustForContrast(WADA.orangeRufous, '#fffdf7', 4.5, 'light').oklch, // darkened rufous: cream text must pass AA
   'color-action-primary-hover': adjustForContrast(WADA.orangeRufous, '#fffdf7', 5.5, 'light').oklch,
-  'color-accent': toOklch(WADA.etruscanRed),
+  'color-accent': adjustForContrast(WADA.etruscanRed, '#faf6ec', 4.5, 'light').oklch, // Etruscan Red darkened — Astryx renders Link text in accent, needs AA
   'color-accent-soft': toOklch('#f7e3df'),
   'color-focus-ring': toOklch('#8a4a12'),
   'color-status-success': adjustForContrast('#2f6b45', '#faf6ec', 4.5, 'light').oklch, // Pistachio hue, darkened
@@ -113,7 +113,7 @@ export const DARK = {
   'color-border-subtle': toOklch('#3a332a'),
   'color-action-primary': adjustForContrast('#e08b4a', '#171410', 3, 'dark').oklch, // Orange Rufous, lifted
   'color-action-primary-hover': adjustForContrast('#e08b4a', '#171410', 2.5, 'dark').oklch,
-  'color-accent': adjustForContrast('#e2857a', '#171410', 3, 'dark').oklch, // Etruscan Red, lifted
+  'color-accent': adjustForContrast('#e2857a', '#171410', 4.5, 'dark').oklch, // Etruscan Red lifted — accent text needs AA on dark page
   'color-accent-soft': toOklch('#3a2622'),
   'color-focus-ring': toOklch('#f0a878'),
   'color-status-success': adjustForContrast('#7db894', '#171410', 4.5, 'dark').oklch,
@@ -146,10 +146,12 @@ for (const [mode, T, page, raised, action] of [
   const textS = formatHex(rgb(parse(T['color-text-secondary'])));
   const onAction = formatHex(rgb(parse(T['color-text-on-action'])));
   const focus = formatHex(rgb(parse(T['color-focus-ring'])));
+  const accent = formatHex(rgb(parse(T['color-accent'])));
   row(mode, 'color-text-primary', textP, 'surface-page', page, 4.5);
   row(mode, 'color-text-primary', textP, 'surface-raised', raised, 4.5);
   row(mode, 'color-text-secondary', textS, 'surface-page', page, 4.5);
   row(mode, 'color-text-secondary', textS, 'surface-raised', raised, 4.5);
+  row(mode, 'color-text-accent (Link text)', accent, 'surface-page', page, 4.5);
   row(mode, 'color-text-on-action', onAction, 'action-primary', action, 4.5);
   row(mode, 'color-focus-ring', focus, 'surface-page', page, 3);
   row(mode, 'color-focus-ring', focus, 'surface-raised', raised, 3);

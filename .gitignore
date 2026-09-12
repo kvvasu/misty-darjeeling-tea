@@ -1,9 +1,13 @@
 node_modules/
 .next/
 out/
+# Playwright failure artifacts (root); qa/test-results/ is tracked evidence
+/test-results/
+playwright-report/
 qa/screenshots/
-qa/test-results/
-qa/lighthouse/.lighthouseci/
+qa/lighthouse/
+.lighthouseci/
+C:*
 *.tsbuildinfo
 next-env.d.ts
 .DS_Store

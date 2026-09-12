@@ -44,6 +44,13 @@
     left: 0;
   }
 
+  /* Skip-link target: receives programmatic focus (tabindex="-1"). The outline
+   * is suppressed for this non-interactive target per standard practice —
+   * visible focus is asserted on every interactive tab stop instead. */
+  :where(main:focus) {
+    outline: none;
+  }
+
   /* Honeypot: visually hidden but NOT display:none (§2.3) — kept out of the
    * accessibility tree via aria-hidden on the wrapper, tabindex="-1" on input */
   :where(.honeypot-field),

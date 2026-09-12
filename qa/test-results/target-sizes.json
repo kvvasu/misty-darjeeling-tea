@@ -1,0 +1,62 @@
+[
+  {
+    "index": 0,
+    "w": 182,
+    "h": 40,
+    "pass": true
+  },
+  {
+    "index": 1,
+    "w": 200,
+    "h": 24,
+    "pass": true
+  },
+  {
+    "index": 2,
+    "w": 80,
+    "h": 24,
+    "pass": true
+  },
+  {
+    "index": 3,
+    "w": 100,
+    "h": 24,
+    "pass": true
+  },
+  {
+    "index": 4,
+    "w": 100,
+    "h": 24,
+    "pass": true
+  },
+  {
+    "index": 5,
+    "w": 70,
+    "h": 24,
+    "pass": true
+  },
+  {
+    "index": 6,
+    "w": 32,
+    "h": 32,
+    "pass": true
+  },
+  {
+    "index": 8,
+    "w": 200,
+    "h": 24,
+    "pass": true
+  },
+  {
+    "index": 13,
+    "w": 1262,
+    "h": 24,
+    "pass": true
+  },
+  {
+    "index": 14,
+    "w": 1262,
+    "h": 24,
+    "pass": true
+  }
+]

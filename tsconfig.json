@@ -34,10 +34,5 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "out",
-    "qa"
-  ]
+  ],  "exclude": ["node_modules", "out", "qa", "qa-a11y.spec.ts", "playwright.config.ts", "test-results"]
 }

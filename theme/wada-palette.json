@@ -1,6 +1,6 @@
 {
   "meta": {
-    "generated": "2026-09-12T18:50:19.016Z",
+    "generated": "2026-09-12T19:59:40.447Z",
     "oklchOnly": "hue preserved from Wada sources; L/C adjusted for WCAG 2.2 AA",
     "plates": {
       "#102": [
@@ -34,7 +34,7 @@
     "color-border-subtle": "oklch(0.8867 0.0351 89)",
     "color-action-primary": "oklch(0.5706 0.1346 54)",
     "color-action-primary-hover": "oklch(0.5226 0.1346 54)",
-    "color-accent": "oklch(0.587 0.1485 28)",
+    "color-accent": "oklch(0.563 0.1485 28)",
     "color-accent-soft": "oklch(0.9308 0.0227 31)",
     "color-focus-ring": "oklch(0.478 0.1082 56)",
     "color-status-success": "oklch(0.4769 0.0881 154)",
@@ -92,6 +92,14 @@
       "fg": "color-text-secondary",
       "bg": "surface-raised",
       "ratio": 9.99,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "light",
+      "fg": "color-text-accent (Link text)",
+      "bg": "surface-page",
+      "ratio": 4.58,
       "need": 4.5,
       "pass": true
     },
@@ -180,6 +188,14 @@
       "fg": "color-text-secondary",
       "bg": "surface-raised",
       "ratio": 8.85,
+      "need": 4.5,
+      "pass": true
+    },
+    {
+      "mode": "dark",
+      "fg": "color-text-accent (Link text)",
+      "bg": "surface-page",
+      "ratio": 6.88,
       "need": 4.5,
       "pass": true
     },
